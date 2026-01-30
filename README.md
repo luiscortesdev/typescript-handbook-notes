@@ -1,0 +1,10 @@
+# Typescript Handbook Notes
+This repo contains notes and code snippets for the TypeScript handbook.
+Tabs of the handbook are organized by folder.
+Sections of the tabs are organized as separate files within the tab's folder.
+
+## Installation
+This project comes set up with TypeScript Execute (tsx). It's all you will really need
+to run these files and see their output.
+
+Execute `npx tsx <file_path_from_root>` in the command line to run TypeScript files. Alternatively, you can add them as scripts to package.json.
