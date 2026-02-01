@@ -20,3 +20,22 @@ logCoords(myCoordWithZ) // Still works because myCoordWithZ fulfills all of the 
 
 const color = { hex: "#187ABF", x: 22 }
 logCoords(color) // Fails since color doesn't fulfill all of the fields
+
+
+// Works exactly the same with instances of classes. As long as it fulfills all of the 
+// interface's properties TypeScript doesn't error.
+class VirtualCoord {
+    x: number;
+    y: number;
+    z: number
+
+
+    constructor(x: number, y: number, z: number) {
+        this.x = x 
+        this.y = y
+        this.z = z
+    }
+}
+
+const newVCoord = new VirtualCoord(12, 22, 25) 
+logCoords(newVCoord)
