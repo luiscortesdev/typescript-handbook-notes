@@ -21,4 +21,5 @@ async function getFavoriteNumber(): Promise<number> {
 // TypeScript can infer the type of some anonymous functions
 let cities = ["Miami", "Dallas", "Austin", "San Francisco"]
 
+// Hover over the parameter city and you will see TypeScript already knows it should be a string.
 cities.forEach((city) => console.log(city))
