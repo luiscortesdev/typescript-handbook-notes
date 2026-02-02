@@ -18,7 +18,7 @@ function moveCharacter(name: string, direction: "Up" | "Down" | "Left" | "Right"
 }
 
 moveCharacter("Mario", "Down")
-//moveCharacter("Mario", "Forward") // Doesn't work because that isn't one of the types in the union
+moveCharacter("Mario", "Forward") // Doesn't work because that isn't one of the types in the union
 
 
 // Works with numbers too
@@ -36,7 +36,7 @@ function configure(x: Options | "auto") {
 }
 configure({ width: 100 });
 configure("auto");
-//configure("automatic"); // automatic is not in the union
+configure("automatic"); // automatic is not in the union
 
 
 // TypeScript always assumes that the value of objects will change later on.
