@@ -19,7 +19,7 @@ function safeParse(s: string): unknown {
 }
  
 // Need to be careful with 'obj'!
-const obj = safeParse("");
+// const obj = safeParse("");
 
 
 // Sometimes functions will never return a value. Not even a void. Kind of rare.
