@@ -100,3 +100,44 @@ let readonlyPerson: ReadonlyPerson = writablePerson;
 console.log(readonlyPerson.age); // prints '42'
 writablePerson.age++;
 console.log(readonlyPerson.age); // prints '43'
+
+
+// We can use index signatures to describe the types of possible values.
+function getNumberArray() {
+    let res = []
+    for (let i=0; i < 10; i++) {
+        res.push(Math.floor(Math.random() * 10))
+    }
+    return res
+}
+
+// A number array that when accessed with an index number returns a number
+interface NumberArray {
+    [index: number]: number;
+}
+
+let numArray = getNumberArray()
+const secondNum = numArray[1]
+
+// TypeScript can ensure that other properties exist on the type you are returning
+interface NumberDictionary {
+    [index: string]: number; // Here we are saying every index/key returns a number
+    
+    length: number; // ok
+    name: string; // A name property returning a string doesn't make sense
+}
+
+// It's fine though if we say it can be a number or string.
+interface NumberOrStringDictionary {
+    [index: string]: number | string;
+    length: number; // ok, length is a number
+    name: string; // ok, name is a string
+}
+
+// We can also make every index/key readonly.
+interface ReadonlyStringArray {
+    readonly [index: number]: string;
+}
+
+let myArray: ReadonlyStringArray = ["Bob", "Jeff", "Tom"];
+myArray[2] = "Mallory"; // Doesn't work because the array is readonly for every index.
