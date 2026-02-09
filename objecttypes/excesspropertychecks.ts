@@ -51,3 +51,6 @@ let newRect = createRect(rectOptions)
 // However, this only works as long as there is at least one shared property between the type and object
 let badRectOptions = { opacity: 0.5 };
 let badRect = createRect(badRectOptions); // TypeScript throws an error because the options and type contain no shared properties
+
+
+// NOTICE: It is not adviseable to use these workarounds. Instead, you should change your type declarations.
